@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+
+  &:hover {
+    color: var(--hover-link-color);
+  }
+
+  &:active {
+    color: var(--pressed-link-color);
+  }
+}
+
+body {
+  --mb-18: 18px;
+  --mb-14: 14px;
+  --mb-10: 10px;
+  --mb-8: 8px;
+  --mb-6: 6px;
+
+  --main-title-size: 2em;
+  --subtitle-size: 1.5em;
+  --text-size-primary: 1.1em;
+  --text-size-secondary: 0.9em;
+
+  --text-color-primary: #333333;
+  --text-color-secondary: rgb(75, 73, 73);
+  --text-color-additional: rgba(0, 0, 0, 0.8);
+  --line-height-size: 24px;
+  --link-color: #009cf0;
+  --hover-link-color: rgba(255, 97, 99, 0.8);
+  --pressed-link-color: rgba(255, 97, 99, 1);
+
+  --bg-color-default: #ffffff;
+  --bg-color-primary: rgb(236, 231, 231);
+  --border-color: #000000;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.estate {
+  h1 {
+    padding: 14px 0;
+    font-size: var(--main-title-size);
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+h1,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+// Карточка
+
+.estate__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.estate__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--mb-18);
+}
+
+.estate__image {
+  margin-bottom: var(--mb-10);
+}
+
+.estate__title {
+  display: inline-block;
+  margin-bottom: var(--mb-8);
+
+  font-size: var(--subtitle-size);
+
+  cursor: pointer;
+}
+
+.estate__address {
+  margin-bottom: var(--mb-6);
+
+  font-size: var(--text-size-primary);
+
+  color: var(--text-color-secondary);
+}
+
+.estate__price {
+  font-size: var(--text-color-secondary);
+  font-weight: 600;
+
+  color: var(--text-color-additional);
+}
+
+// Детальная карточка
+
+.estate-popup {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.estate-details {
+  position: absolute;
+
+  top: 5%;
+  left: 50%;
+
+  min-width: 768px;
+  margin-bottom: 5%;
+  padding: 10px 14px;
+  background-color: var(--bg-color-default);
+
+  transform: translate(-50%);
+
+  &__address,
+  &__description,
+  &__price {
+    margin-bottom: var(--mb-10);
+  }
+
+  h4 {
+    margin-bottom: var(--mb-6);
+    font-size: var(--subtitle-size);
+  }
+}
+
+.estate-details__text {
+  font-size: var(--text-size-primary);
+  line-height: var(--line-height-size);
+
+  color: var(--text-color-secondary);
+}
+
+.estate-details__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--mb-14);
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.estate-details__title {
+  font-size: var(--subtitle-size);
+
+  color: var(--link-color);
+}
+
+.estate-details__close-button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  background-color: transparent;
+  background-image: url("../../dist/images/icons/cross.svg");
+  border: none;
+  cursor: pointer;
+}
+
+.estate-details__gallery {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--mb-14);
+}
+
+.estate-details__gallery-row {
+  display: flex;
+  justify-content: center;
+  &_1 {
+    margin-bottom: var(--mb-14);
+
+    background-color: var(--bg-color-primary);
+  }
+  &_2 {
+    display: flex;
+  }
+}
+
+.estate-details__image {
+  &_small {
+    width: 30%;
+    max-height: 200px;
+  }
+  &_small:not(:last-child) {
+    margin-right: 5%;
+  }
+}
+
+.estate-details__contacts {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+  li:not(:last-child) {
+    margin-bottom: var(--mb-6);
+  }
+}
+
+.estate-details__user-profile {
+  font-weight: 600;
+}
