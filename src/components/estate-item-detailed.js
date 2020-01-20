@@ -8,9 +8,15 @@ const createEstateItemDetailedTemplate = (data) => {
     price,
     description,
     sellerName,
-    images,
-    previewImage // Не забыать удалить
-  } = data;
+    images
+  } = data[0];
+  console.log(data[0]);
+  const getImages = images.map((img, i) => {
+    if (i === 0) {
+      return `<img class="estate-details__image estate-details__image_small estate-details__image_active" src="${img}"/>`
+    }
+    return `<img class="estate-details__image estate-details__image_small" src="${img}"/>`
+  });
   return (
     `<section class="estate-popup">
     <div class="estate-details">
@@ -24,25 +30,14 @@ const createEstateItemDetailedTemplate = (data) => {
             class="estate-details__gallery-row estate-details__gallery-row_1"
           >
             <img
-              class=" estate-details__image estate-details__image_large"
-              src="${previewImage}"
+              class="estate-details__image estate-details__image_large"
+              src="${images[0]}"
             />
           </div>
           <div
             class="estate-details__gallery-row estate-details__gallery-row_2"
           >
-            <img
-              class="estate-details__image estate-details__image_small"
-              src="${previewImage}"
-            />
-            <img
-              class="estate-details__image estate-details__image_small"
-              src="${previewImage}"
-            />
-            <img
-              class="estate-details__image estate-details__image_small"
-              src="${previewImage}"
-            />
+            ${getImages.length > 1 ? getImages.join(` `) : ``}
           </div>
         </div>
         <div class="estate-details__information">
