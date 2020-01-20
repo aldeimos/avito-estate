@@ -1,4 +1,4 @@
-import AbstractComponent from "./abstract-component";
+import AbstractComponent from './abstract-component';
 
 const createEstateItemDetailedTemplate = (data) => {
   const {
@@ -10,7 +10,6 @@ const createEstateItemDetailedTemplate = (data) => {
     sellerName,
     images
   } = data[0];
-  console.log(data[0]);
   const getImages = images.map((img, i) => {
     if (i === 0) {
       return `<img class="estate-details__image estate-details__image_small estate-details__image_active" src="${img}"/>`

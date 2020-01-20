@@ -8,7 +8,6 @@ const createEstateItemTemplate = (data) => {
     previewImage,
     price
   } = data;
-  console.log(previewImage);
   return (
     `<li class="estate__item">
         <a href="#">
@@ -25,7 +24,6 @@ const createEstateItemTemplate = (data) => {
 
 export default class EstateItem extends AbstractComponent {
   constructor(card) {
-    console.log(card);
     super();
     this._card = card;
   }

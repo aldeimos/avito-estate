@@ -1,5 +1,7 @@
 import EstateItem from '../components/estate-item';
 import EstateItemDetails from '../components/estate-item-detailed';
+import ErrorAlert from '../components/error-alert.js';
+
 import {
   render,
   RenderPosition,
@@ -43,7 +45,7 @@ export default class EstateController {
         buttonClose.addEventListener(`click`, onButtonCloseClick);
         this.setGalleryImageHandler();
         this.setClickOutsideHandler();
-      })
+      }).catch(() => render(document.body, new ErrorAlert().getElement(), RenderPosition.AFTERBEGIN));
       document.addEventListener(`keydown`, onEscKeydown);
     }
     render(this._container, this._estateItem.getElement(), RenderPosition.AFTERBEGIN);
