@@ -1,3 +1,5 @@
+import {createElement} from '../utils/render.js';
+
 export default class AbstractComponent {
   constructor() {
     if (new.target === AbstractComponent) {

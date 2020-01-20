@@ -13,8 +13,7 @@ module.exports = {
     overlay: true
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: '/node_modules/'
@@ -62,6 +61,12 @@ module.exports = {
             }
           }
         ]
+      }, {
+        test: /\.svg/,
+        use: {
+          loader: 'svg-url-loader',
+          options: {}
+        }
       }
     ]
   },
