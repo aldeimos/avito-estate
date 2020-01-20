@@ -1,1 +1,1 @@
-# avito-estate
+Проект разворачивается по командам: npm i, npm run start.

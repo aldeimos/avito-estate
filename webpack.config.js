@@ -10,6 +10,7 @@ module.exports = {
     publicPath: '/dist'
   },
   devServer: {
+    contentBase: `./public`,
     overlay: true
   },
   module: {
