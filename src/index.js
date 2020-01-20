@@ -1,4 +1,3 @@
-import './css/main.css';
 import './scss/main.scss';
 
 import EstateController from './controllers/estate-controller.js';

@@ -78,6 +78,7 @@ p {
   display: flex;
   flex-direction: column;
   max-width: 240px;
+  margin-right: auto;
   margin-bottom: var(--mb-18);
 }
 
@@ -98,8 +99,11 @@ p {
   margin-bottom: var(--mb-6);
 
   font-size: var(--text-size-primary);
+  text-overflow: ellipsis;
 
   color: var(--text-color-secondary);
+
+  overflow: hidden;
 }
 
 .estate__price {

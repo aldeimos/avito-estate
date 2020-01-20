@@ -42,6 +42,7 @@ export default class EstateController {
         render(container, this._estateItemDetails.getElement(), RenderPosition.BEFOREEND);
         buttonClose.addEventListener(`click`, onButtonCloseClick);
         this.setGalleryImageHandler();
+        this.setClickOutsideHandler();
       })
       document.addEventListener(`keydown`, onEscKeydown);
     }
@@ -61,5 +62,14 @@ export default class EstateController {
     smallImages.forEach((img) => {
       img.addEventListener(`click`, onGalleryImageClick);
     })
+  }
+  setClickOutsideHandler() {
+    const onOutsideClick = (evt) => {
+      if (evt.target === this._estateItemDetails.getElement()) {
+        remove(this._estateItemDetails);
+        this._estateItemDetails.getElement().removeEventListener(`click`, onOutsideClick);
+      }
+    }
+    this._estateItemDetails.getElement().addEventListener(`click`, onOutsideClick);
   }
 }
